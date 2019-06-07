@@ -11,7 +11,7 @@ ini_set('error_log','php.log');
 // デバッグ
 //================================
 //デバッグフラグ
-$debug_flg = true;
+$debug_flg = false;
 //デバッグログ関数
 function debug($str){
   global $debug_flg;
@@ -71,7 +71,6 @@ define('SUC01', 'パスワードを変更しました');
 define('SUC02', 'プロフィールを変更しました');
 define('SUC03', 'メールを送信しました');
 define('SUC04', '登録しました');
-define('SUC05', '購入しました！相手と連絡を取りましょう！');
 
 //================================
 // グローバル変数
