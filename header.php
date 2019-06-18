@@ -31,6 +31,7 @@
               enable_page_level_ads: true
          });
     </script>
+    <link rel="icon" type="image/x-icon" href="img/favicon.jpg">
   </head>
 
   <body class="page-home">
