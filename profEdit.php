@@ -145,39 +145,40 @@ debug('画面表示処理終了 <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
       </section>
     </div>
 
-    <footer id="footer">
-      Copyright <a href="index.php">MEMO</a>. All Rights Reserved.
-    </footer>
+<footer id="footer">
+  Copyright <a href="index.php">MEMO</a>. All Rights Reserved.
+</footer>
 
-    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script>
-      $(function(){
-        // 1.フッターの高さを固定（コンテンツが少ない場合にもデザインが崩れないよう）
-        var $ftr = $('#footer');
-        if($('#footer').length){
-        if( window.innerHeight > $ftr.offset().top + $ftr.outerHeight() ){
-          $ftr.attr({'style': 'position:fixed; top:' + (window.innerHeight - $ftr.outerHeight()) +'px;' });
-        }
-        }
-          });
-    </script>
-    <script>
-      function resize(Tarea){
-       var areaH = Tarea.style.height;
-       areaH = parseInt(areaH) - 54;
-       if(areaH < 30){ areaH = 30; }
-       Tarea.style.height = areaH + "px";
-       Tarea.style.height = parseInt(Tarea.scrollHeight + 10) + "px";
-      }
-      // ドキュメント内の全てのテキストエリアを走査して高さ調整関数を適用します
-      onload = function(){
-       var els = document.getElementsByTagName('textarea');
-       for (var i = 0; i < els.length; i++){
-         var obj = els[i];
-         resize(obj);
-         obj.onkeyup = function(){ resize(this); }
-       }
-      }
-    </script>
-    </body>
-    </html>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script>
+  $(function(){
+    // 1.フッターの高さを固定（コンテンツが少ない場合にもデザインが崩れないよう）
+    var $ftr = $('#footer');
+    if($('#footer').length){
+    if( window.innerHeight > $ftr.offset().top + $ftr.outerHeight() ){
+      $ftr.attr({'style': 'position:fixed; top:' + (window.innerHeight - $ftr.outerHeight()) +'px;' });
+    }
+    }
+      });
+</script>
+<script>
+  //テキストエリアの高さ調整
+  function resize(Tarea){
+   var areaH = Tarea.style.height;
+   areaH = parseInt(areaH) - 54;
+   if(areaH < 30){ areaH = 30; }
+   Tarea.style.height = areaH + "px";
+   Tarea.style.height = parseInt(Tarea.scrollHeight + 10) + "px";
+  }
+  // ドキュメント内の全てのテキストエリアを走査して高さ調整関数を適用します
+  onload = function(){
+   var els = document.getElementsByTagName('textarea');
+   for (var i = 0; i < els.length; i++){
+     var obj = els[i];
+     resize(obj);
+     obj.onkeyup = function(){ resize(this); }
+   }
+  }
+</script>
+</body>
+</html>

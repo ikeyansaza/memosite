@@ -146,20 +146,6 @@ function validHalf($str, $key){
     $err_msg[$key] = MSG04;
   }
 }
-//電話番号形式チェック
-function validTel($str, $key){
-  if(!preg_match("/0\d{1,4}\d{1,4}\d{4}/", $str)){
-    global $err_msg;
-    $err_msg[$key] = MSG10;
-  }
-}
-//郵便番号形式チェック
-function validZip($str, $key){
-  if(!preg_match("/^\d{7}$/", $str)){
-    global $err_msg;
-    $err_msg[$key] = MSG11;
-  }
-}
 //半角数字チェック
 function validNumber($str, $key){
   if(!preg_match("/^[0-9]+$/", $str)){
@@ -221,13 +207,6 @@ function dbConnect(){
   return $dbh;
 }
 //SQL実行関数
-//function queryPost($dbh, $sql, $data){
-//  //クエリー作成
-//  $stmt = $dbh->prepare($sql);
-//  //プレースホルダに値をセットし、SQL文を実行
-//  $stmt->execute($data);
-//  return $stmt;
-//}
 function queryPost($dbh, $sql, $data){
   //クエリー作成
   $stmt = $dbh->prepare($sql);
@@ -264,7 +243,7 @@ function getUser($u_id){
   } catch (Exception $e) {
     error_log('エラー発生:' . $e->getMessage());
   }
-//  return $stmt->fetch(PDO::FETCH_ASSOC);
+
 }
 
 //================================
@@ -501,8 +480,6 @@ function getMemoList($currentMinNum = 1, $listSpan = 5 ,$u_id){
     $sql = 'SELECT * FROM memo WHERE user_id = :u_id ORDER BY id DESC';
     $sql .= ' LIMIT :listSpan OFFSET :currentMinNum';
     debug('SQL：'.$sql);
-    // クエリ実行
-
 
     //クエリー作成
     $stmt = $dbh->prepare($sql);

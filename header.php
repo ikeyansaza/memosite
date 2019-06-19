@@ -2,15 +2,14 @@
 <html lang="ja">
   <head>
     <!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-135296207-2"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-135296207-2"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
 
-  gtag('config', 'UA-135296207-2');
-</script>
-
+      gtag('config', 'UA-135296207-2');
+    </script>
     <meta charset="utf-8">
     <!--viewportの設定-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0 ">
